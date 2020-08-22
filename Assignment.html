@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!-- saved from url=(0133)https://coursera-assessments.s3.amazonaws.com/assessments/1589614982064/b3ed2498-68bf-4613-e8c4-6085243a7e0f/Ass-3%28Week%204%29.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+     <title>Assignment</title>
+
+     <link rel="stylesheet" type="text/css" href="./Assignment_files/ass.css">
+
+     <script>
+          function checkField1() {
+               var x = document.getElementById("field1").value;
+               if(x == "")
+                  document.getElementById("message1").innerHTML = "Enter number!";
+          }
+          function checkField2() {
+               var x = document.getElementById("field2").value;
+               if(x == "")
+                  document.getElementById("message2").innerHTML = "Enter number!";
+          }
+          function subtraction() {
+               var x = document.getElementById("field1").value;
+               var y = document.getElementById("field2").value;
+               var z = x - y;
+               document.getElementById("output").innerHTML = "Answer: "+ z;
+          }
+          function multiply() {
+               var x = document.getElementById("field1").value;
+               var y = document.getElementById("field2").value;
+               var z = x * y;
+               document.getElementById("output").innerHTML = "Answer: "+ z;
+          }
+          function division() {
+               var x = document.getElementById("field1").value;
+               var y = document.getElementById("field2").value;
+               var z = x / y;
+               document.getElementById("output").innerHTML = "Answer: "+ z;
+          }
+     </script>
+
+
+</head>
+
+<body id="body">
+
+<h1 id="h1">Calculator</h1>
+
+<div id="first">
+     <input id="field1" type="number" onblur="checkField1();"> <span id="message1"></span>
+     <input id="field2" type="number" onblur="checkField2();"> <span id="message2"></span>
+     <button onclick="subtraction();">SUB</button>
+     <button onclick="multiply();">MUL</button>
+     <button onclick="division();">DIV</button>
+     <p id="output"></p>
+</div>
+
+<h2 id="h2">Trigonometric Functions</h2>
+
+<div id="second">
+    <table>
+    <thead>
+    <tr>
+    <td>Function</td><td>   0</td><td>   30</td><td>   45</td><td>   60</td><td>   90</td>
+    </tr>
+    </thead>
+    <tfoot>
+    <tr>
+    <td>Sine</td><td>   0</td><td>   0.5</td><td>   0.707</td><td>   0.866</td><td>   1</td>
+    </tr>
+    <tr>
+    <td>Cosine</td><td>   1</td><td>   0.866</td><td>   0.707</td><td>   0.5</td><td>   0</td>
+    </tr>
+    <tr>
+    <td>Tan</td><td>   0</td><td>   0.577</td><td>   1</td><td>   1.732</td><td style="font-size:120%;">  ∞</td>
+    </tr>
+    <tr>
+    <td>Cosec</td><td style="font-size:120%;">   ∞</td><td>   2</td><td>   1.414</td><td>   1.154</td><td>   1</td>
+    </tr>
+    <tr>
+    <td>Sec</td><td>   1</td><td>   1.154</td><td>   1.414</td><td>   2</td><td style="font-size:120%;">   ∞</td>
+    </tr>
+    <tr>
+    <td>Cot</td><td style="font-size:120%;">   ∞</td><td>   1.732</td><td>   1</td><td>   0.577</td><td>   0</td>
+    </tr>
+    </tfoot>
+    </table>
+</div>
+
+
+
+</body></html>

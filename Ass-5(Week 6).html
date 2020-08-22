@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style type="text/css">
+    h1 {
+    color: whitesmoke;
+    margin-left:20px;
+    font-size: 300%;
+}
+
+h2 {
+    color: whitesmoke;
+    margin-left:20px;
+}
+
+div {
+    margin-left: 20px;
+    color: white;
+}
+
+#firstName {
+    font-size: 200%;
+    height: 1.5em;
+}
+
+#lastName {
+    margin-left: 15px;
+    font-size: 200%;
+    height: 1.5em;
+}
+
+#email {
+    font-size: 200%;
+    height: 1.5em;
+    width: 25em;
+}
+
+
+.button {
+    margin-left: 340px;
+    margin-top: 20px;
+    background-color: green;
+    color: white;
+    padding: 10px;
+    font-size: 250%;
+    width: 5.5em;
+    -webkit-border-radius: 300px/10px ;
+    border-radius: 30px/10px;
+}
+</style>
+    <title>Facebook SignUp Page</title>
+    <script type="text/javascript">
+    function validateForm() {
+       var pass1 = document.getElementById("password1").value;
+       var pass2 = document.getElementById("password2").value;
+
+       if(pass1 == pass2){
+           alert("passwords match");
+           return true;
+        }
+        else {
+            alert("passwords do not match");
+            return false;
+        }
+    }
+    function validateFirstName() {
+        var fName = document.getElementById("firstName").value;
+        var re1 = /^[a-zA-Z\s\'\-]{2,15}$/;
+
+        if(re1.test(fName) == false) { //if input is invalid, update page to prompt for new input 
+            document.getElementById("firstNamePrompt").style.color = "White";
+            document.getElementById("firstNamePrompt").innerHTML = "<strong>Enter 2-15 characters</strong>";
+            return false;
+        }
+        return true;
+    }
+    function validateLastName() {
+        var lName = document.getElementById("lastName").value;
+        var re2 = /^[a-zA-Z\s\'\-]{2,25}$/;
+
+        if(re2.test(lName) == false) { //if input is invalid, update page to prompt for new input 
+            document.getElementById("lastNamePrompt").style.color = "White";
+            document.getElementById("lastNamePrompt").innerHTML = "<strong>Enter 2-25 characters</strong>";
+            return false;
+        }
+        return true;
+    }
+    function validateEmail() {
+        var eml = document.getElementById("email").value;
+        var re3 = /^[!#$%&'*+./0-9=?_`a-z{|}~^-]+@[.0-9a-z-]+\.[a-z]{2,63}$/;
+
+        if(re3.test(eml) == false) { //if input is invalid, update page to prompt for new input 
+            document.getElementById("emailPrompt").style.color = "White";
+            document.getElementById("emailPrompt").innerHTML = "<strong>Enter correct email format</strong>";
+            return false;
+        }
+        return true;
+    }
+    </script>
+
+
+</head>
+
+<body style="background-image: url('https://images.freecreatives.com/wp-content/uploads/2016/04/Background-Facebook-HD-Wallpaper1.jpg');">
+
+<h1>Create an account</h1>
+<h2>It's quick and easy.</h2>
+<div>
+<form action="mySubmitPage.html" onsubmit="return validateForm();return validateName();">
+    <br>
+    <input type="text" name="firstname" placeholder="First Name" id="firstName" onblur="return validateFirstName();" required>
+    <span id="firstNamePrompt" style="font-size: 150%;"></span>
+    <input type="text" name="lastname" placeholder="Last Name" id="lastName" onblur="return validateLastName();" required>
+    <span id="lastNamePrompt" style="font-size: 150%;"></span><br>
+    <input type="text" name="email" id="email" placeholder="Email address" onblur="validateEmail();" required>
+    <span id="emailPrompt" style="font-size: 150%;"></span><br><br><br>
+
+    User password:<br>
+    <input type="password" id="password1" required><br>
+    Confirm password:<br>
+    <input type="password" id="password2" required><br><br>
+
+    <input type="radio" name="gender" value="Male" checked>Male
+    <input type="radio" name="gender" value="Female">Female
+    <input type="radio" name="gender" value="Other">Other<br><br>
+
+    Birthday:<br>
+    <input type="date" name="birthday"><br>
+
+    <input class="button" type="submit" value="Sign Up">
+</form>
+</div>
+
+</body>
+
+
+</html>

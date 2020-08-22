@@ -1,0 +1,54 @@
+/*Primary selectors */
+body {
+    background-color: #FFF;
+    color: #000;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: large;
+}    
+
+table {
+    width: 500px;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+td {
+    vertical-align: top;
+    padding: 5px;
+    word-wrap: break-word;
+}
+
+/* IDs and Classes */
+
+#fullpage {
+    margin: 100px;
+}
+
+.label_col {
+    text-align: right;
+}
+
+.input_col {
+    text-align: left;
+}
+
+.feedback_col {
+    text-align: center;
+    vertical-align: middle;
+    color: Lightgray;
+    font-size: small;
+}
+
+.Button {
+    margin: 200px;
+    text-align: center;
+    width: 50px;
+    
+}
+
+.buttonBG {
+    background-color: lightgray;
+    padding: 2px;
+    -webkit-border-radius: 300px/10px ;
+    border-radius: 10px/10px;
+}

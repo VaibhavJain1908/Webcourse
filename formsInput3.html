@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="basic.css">
+     <title>HTML Forms3</title>
+     <script type="text/javascript">
+     function validateForm() {
+       var pass1 = document.getElementById("password1").value;
+       var pass2 = document.getElementById("password2").value;
+
+       if(pass1 == pass2){
+           alert("passwords match");
+           return true;
+        }
+        else {
+            alert("passwords do not match");
+            return false;
+        }
+
+        return false;
+     }
+    </script>
+
+
+</head>
+
+<body>
+
+<form action="mySubmitPage.html" onsubmit="return validateForm();">
+    First name:<br>
+    <input type="text" name="firstname" required><br>
+    Last name:<br>
+    <input type="text" name="lastname" value="Jain" required><br>
+    User password:<br>
+    <input type="password" id="password1" required><br>
+    <input type="password" id="password2" required><br><br>
+
+    <input type="radio" name="food" value="Pizza" checked>Pizza<br>
+    <input type="radio" name="food" value="Tacos">Tacos<br>
+    <input type="radio" name="food" value="Salad">Salad<br><br>
+
+    <input type="checkbox" name="skills" value="HTML">I Know HTML<br>
+    <input type="checkbox" name="skills" value="JavaScript">I Know JavaScript<br><br>
+
+    Quantity (between 1 and 5):
+    <input type="number" name="quantity" min="1" max="5"><br>
+
+    Birthday:
+    <input type="date" name="birthday"><br>
+
+    Select your favourite color:
+    <input type="color" name="favcolor"><br>
+
+    <input class="button" type="submit" value="Submit">
+</form>
+
+<H1></H1>
+
+</body>
+
+
+</html>

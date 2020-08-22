@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style type="text/css">
+    /*Primary selectors */
+body {
+    background-color: #FFF;
+    color: #000;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: large;
+}    
+
+table {
+    width: 500px;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+td {
+    vertical-align: top;
+    padding: 5px;
+    word-wrap: break-word;
+}
+
+/* IDs and Classes */
+
+#fullpage {
+    margin: 100px;
+}
+
+.label_col {
+    text-align: right;
+}
+
+.input_col {
+    text-align: left;
+}
+
+.feedback_col {
+    text-align: center;
+    vertical-align: middle;
+    color: Lightgray;
+    font-size: small;
+}
+
+.button {
+    margin: 200px;
+    text-align: center;
+    width: 50px;
+    
+}
+    </style>
+    <title>Form Validation</title>
+    <script type="text/javascript">
+    function validateFirstName() { //test input for 2-15 allowed characters
+    var fName = document.getElementById("firstName").value;
+    var re1 = /^[a-zA-Z\s\'\-]{2,15}$/;
+
+    if(re1.test(fName)) { //if input is valid, update page to show successful entry
+        document.getElementById("firstNamePrompt").style.color = "green";
+        document.getElementById("firstNamePrompt").innerHTML = "<strong>valid</strong>";
+        return true;
+    }
+    else { //if input is invalid, update page to prompt for new input 
+        document.getElementById("firstNamePrompt").style.color = "Red";
+        document.getElementById("firstNamePrompt").innerHTML = "<strong>Enter 2-15 characters</strong>";
+        return false;
+    }
+}
+
+function validateLastName() { //test input for 2-15 allowed characters
+    var lName = document.getElementById("lastName").value;
+    var re2 = /^[a-zA-Z\s\'\-]{2,25}$/;
+
+    if(re2.test(lName)) { //if input is valid, update page to show successful entry
+        document.getElementById("lastNamePrompt").style.color = "green";
+        document.getElementById("lastNamePrompt").innerHTML = "<strong>valid</strong>";
+        return true;
+    }
+    else { //if input is invalid, update page to prompt for new input 
+        document.getElementById("lastNamePrompt").style.color = "Red";
+        document.getElementById("lastNamePrompt").innerHTML = "<strong>Enter 2-25 characters</strong>";
+        return false;
+    }
+}
+
+function validateOrgName() { //test input for 4-15 allowed characters
+    var oName = document.getElementById("orgName").value;
+    var re = /^[a-zA-Z\s\'\-\ ]{4,25}$/;
+
+    if(re.test(oName)) { //if input is valid, update page to show successful entry
+        document.getElementById("orgNamePrompt").style.color = "green";
+        document.getElementById("orgNamePrompt").innerHTML = "<strong>valid</strong>";
+        return true;
+    }
+    else { //if input is invalid, update page to prompt for new input 
+        document.getElementById("orgNamePrompt").style.color = "Red";
+        document.getElementById("orgNamePrompt").innerHTML = "<strong>Enter 4-25 characters</strong>";
+        return false;
+    }
+}
+
+function validatePhone() { //test input for 10 allowed digits
+    var pNo = document.getElementById("phone").value;
+    var re3 = /^[0-9]{10}$/;
+
+    if(re3.test(pNo)) { //if input is valid, update page to show successful entry
+        document.getElementById("phonePrompt").style.color = "green";
+        document.getElementById("phonePrompt").innerHTML = "<strong>valid</strong>";
+        return true;
+    }
+    else { //if input is invalid, update page to prompt for new input 
+        document.getElementById("phonePrompt").style.color = "Red";
+        document.getElementById("phonePrompt").innerHTML = "<strong>Enter 10 numbers</strong>";
+        return false;
+    }
+}
+
+function validateQuantity() {
+    var qUant = document.getElementById("quantity").value;
+    if(qUant < 56 && qUant > 0) {
+       document.getElementById("quantityPrompt").style.color = "green";
+       document.getElementById("quantityPrompt").innerHTML = "<strong>Available</strong>";
+       return true;
+    }
+    else {
+        document.getElementById("quantityPrompt").style.color = "Red";
+        document.getElementById("quantityPrompt").innerHTML = "<strong>Please enter between (1-55)</strong>";
+        return false;
+    }
+}
+    </script>
+</head>
+
+<body>
+    <form action="#">
+
+        <div id="fullpage">
+
+            <H1>Make an order:</H1>
+
+            <table border="0">
+                <tr>
+                    <td class="label_col">First Name:</td>
+                    <td class="input_col"><input name="firstName" id="firstName" type="text" onblur="validateFirstName();" required></td>
+                    <td class="feedback_col"><span id="firstNamePrompt">&nbsp;</span></td>
+                </tr>
+                <tr>
+                    <td class="label_col">Last Name:</td>
+                    <td class="input_col"><input name="lastName" id="lastName" type="text" onblur="validateLastName();" required></td>
+                    <td class="feedback_col"><span id="lastNamePrompt">&nbsp;</span></td>
+                </tr>
+                <tr>
+                    <td class="label_col">Org Name:</td>
+                    <td class="input_col"><input name="orgName" id="orgName" type="text" onblur="validateOrgName();" required></td>
+                    <td class="feedback_col"><span id="orgNamePrompt">&nbsp;</span></td>
+                </tr>
+                <tr>
+                    <td class="label_col">Phone Number:</td>
+                    <td class="input_col"><input name="phone" id="phone" type="number" onblur="validatePhone();" placeholder="xxxxxxxxxx" required></td>
+                    <td class="feedback_col"><span id="phonePrompt">xxxxxxxxxx</span></td>
+                </tr>
+                <tr>
+                    <td class="label_col">Order quantity:</td>
+                    <td class="input_col"><input name="quantity" id="quantity" type="number" min="1" max="55" onblur="validateQuantity();" required></td>
+                    <td class="feedback_col"><span id="quantityPrompt">(1-55)</span></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><button type="submit">Order now</button></td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</body>
+
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+     <title>Tables Page</title>
+     <link rel="stylesheet" type="text/css" href="together.css">
+
+     <script>
+
+         function doMath() {
+             var x = 2;
+             var y = 10;
+             var z = 0;
+             var answer = x * y / z;
+
+             document.getElementById("output").innerHTML = "The result is: " + answer;
+         }
+
+     </script>
+
+</head>
+
+<body>
+
+<H1>Tables Page</H1>
+
+<button onclick="doMath();">Do the Math</button>
+
+<p id="output"></p>
+
+<a href="http://www.google.com"><img src="google.png" id="google"/></a>
+
+<p style="color:purple;font-size:120%;clear:left;">Practicing HTML is fun. <em>So far</em> we have learned <strong>HTML</strong> is a language
+   <br>made of tags that help us describe how we want our webpage to look. We have tried the head,
+   <br>title, H(heading) and paragraph tags so far. Very few peopleknow all the tags in HTML, but 
+   <br>that is okay because we can do a lot with just some basic tags. We can learn about new tags 
+   <br>when we need them. 
+</p>
+
+<p class="regular">This is a test of regular.</p>
+
+<p class="testClass">This is a test of the test Class.</p>
+
+<table>
+    <tr>
+    <td>Day 1</td><td>Walking</td><td>30 minutes</td>
+    </tr>
+    <tr>
+    <td>Day 2</td><td>Swimming</td><td>45 minutes</td>
+    </tr>
+    <tr>
+    <td>Day 3</td><td>Resting</td><td>500 minutes</td>
+    </tr>
+    <tr>
+    1<td>Day 4</td><td>Resting</td><td>500 minutes</td>
+    </tr>
+    <tr>
+    <td>Day 5</td><td>Resting</td><td>500 minutes</td>
+    </tr>
+    <tr>
+    <td>Link and Image</td><td><img id="google" src="google.png"/></td><td><a href="www.google.com">Go to google</a></td>
+    </tr>
+</table>
+
+<BR/>
+
+
+</body>
+
+
+</html>
